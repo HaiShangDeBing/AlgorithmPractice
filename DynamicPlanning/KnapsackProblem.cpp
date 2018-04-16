@@ -13,10 +13,12 @@
 using namespace std;
 
 void knapsack(int w[],int v[],const int W,const int n){
+    //开辟动态二维数组
     int **f = new int*[n+1];
     for(int i=0;i<=n;i++){
         f[i] = new int [W+1]();
     }
+    //f(i,j)表示前 i 件物品，背包容量为 j 时的最优值
     for(int i=1;i<=n;i++){
         for(int j=1;j<=W;j++){
             if(j>=w[i]){
@@ -26,7 +28,7 @@ void knapsack(int w[],int v[],const int W,const int n){
             }
         }
     }
-    cout<<f[n][W]<<endl;   
+    cout<<f[n][W]<<endl;//输出最优价值  
 }
 
 int main(){
