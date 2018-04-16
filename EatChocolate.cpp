@@ -23,10 +23,14 @@ int main(){
     }else if(diff==1 || diff==2){
         cout<<2;
     }else{
-        x=ceil(M/2.0);
+        x=ceil(diff/2.0);
         cout<<x<<" ";
         while(--n){
             x=ceil(x/2.0);
+            if(x<=2)
+            {
+                break;
+            }
             cout<<x<<" ";
         }
     }
